@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta Especial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">Crespitos Lindos</div>
+    <h1>¿Quieres saber por qué me gustas?</h1>
+    <div class="button-container">
+        <button id="yes-button">Sí</button>
+        <button id="no-button">No</button>
+    </div>
+    
+    <p id="response-text" style="display: none;"></p> <!-- Asegurar que se puede modificar -->
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const noButton = document.getElementById("no-button");
+            const yesButton = document.getElementById("yes-button");
+            const responseText = document.getElementById("response-text");
+
+            if (noButton && responseText) {
+                noButton.addEventListener("click", function () {
+                    console.log("Botón 'No' presionado");
+                    responseText.textContent = "😢😢 LO SABÍA 😢😢";
+                    responseText.style.color = "red";
+                    responseText.style.display = "block"; // Asegurar que sea visible
+                });
+            }
+
+            if (yesButton) {
+                yesButton.addEventListener("click", function () {
+                    window.location.href = "inicio.html";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
